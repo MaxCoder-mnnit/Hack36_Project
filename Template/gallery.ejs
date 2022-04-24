@@ -1,0 +1,146 @@
+<%- include('header.ejs')%>
+<%- include('flash.ejs')%>
+
+    <title>Gallery | LaudedArts</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-fixed-top shadow  navbar-light"
+            style="background-color: black;">
+
+            <div class="navbar-header">
+                <h2><a class="navbar-brand ml-3 font-weight-bolder" href="/Template/index"><strong
+                            class="text-white h3">ℒᾰΰḏἓḓ ἎԻ†Š</strong></a></i>
+                </h2>
+
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse float-right" id="navbar">
+                <ul class="navbar-nav float-right   ml-auto h5">
+                    <li class="nav-item ">
+                        <a class="nav-link text-white float-right px-3" href="/Template/index">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white float-right px-3" href="/Template/about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white float-right px-3" href="/Template/contact">Contact</a>
+                    </li>
+
+                    <% if(flag==1)
+                    {%>
+                      <li class="nav-item">
+                          <a class="nav-link text-white float-right px-3" href="/Template/login">login</a>
+                      </li>
+                    <%}
+                    else
+                    {%>
+                      <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Profile
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/Template/signout">Logout</a>
+                        <a class="dropdown-item" href="/myOrder">My Orders</a>
+                      </div>
+                    </div>
+                    <%}%>
+
+                </ul>
+            </div>
+        </nav>
+        <section class="container-fluid my-5 py-5 bg-light imagegallery">
+            <div class="row mt-4">
+                <div class="col-md-4 col-xs-4 offset-sm-1">
+                    <h1><span class="bg-danger text-white">New &amp; Trending Arts</span></h1>
+                    <p>
+                        <span class="bg-warning h4 text-dark">Painting is self-discovery. Every good artist paints what
+                            he is.</span>
+
+                    </p>
+                    
+                </div>
+                <div class="col-md-7 col-xs-7 text-center">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner round">
+                            <div class="carousel-item active">
+                                <img class="d-block w-75 mx-5 rounded" height="350px" style="
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                      0 6px 20px 0 rgba(0, 0, 0, 0.19);" src='/image/keral.jpg' alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-75 mx-5 rounded" style="
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                  " height="350px" src='/image/jaipur.jpg' alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-75 mx-5 rounded" style="
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                  " height="350px" src='/image/gujrat.jpg' alt="Third slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-75 mx-5 rounded" style="
+                                                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                                                  0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                                              " height="350px" src='/image/back1.jpg' alt="foruth slide">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="container">
+
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h1 style='font-family: "Trirong", sans-serif;'>Art Gallery</h1>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="container-fluid mt-4">
+
+            <div class="row text-center">
+                <% for(var i=0; i<data.length; i++) {%>
+                    <a href="/purchase/<%= data[i]._id%> "
+                        class="col-md-3 painting nounderline text-dark col-sm-6 text-center pointer h4 text-wrap text-break round">
+
+                        <div class="card hover-border">
+                            <img class="card-img-top" height="200px" src="image/<%= data[i].Post_image %>"
+                                alt="<%= data[i].Post_image %>">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= data[i].Post_title %>
+                                </h5>
+                                <form class="d-none" id="paint" method="post" action="/purchase">
+                                    <input type="text" name="gl" value="<%=data[i]._id%>" placeholder="<%=data[i]._id%>"
+                                        class="d-none">
+                                </form>
+                            </div>
+                        </div>
+                    </a>
+
+                    <% } %>
+
+
+            </div>
+
+        </section>
+        <%- include('footer.ejs')%>
+        <script>
+
+        </script>
+    </body>
+
+    </html>

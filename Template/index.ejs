@@ -1,0 +1,145 @@
+<%- include('header.ejs')%>
+<%- include('flash.ejs')%>
+
+<title>LaudedArts</title>    
+</head>
+
+<body class="image">
+
+    <div class="container-fluid image">
+
+        <nav class="navbar navbar-expand-lg  navbar-light">
+
+            <div class="navbar-header">
+                <h2><a class="navbar-brand ml-3 font-weight-bolder" href="/Template/index"><strong class="text-white h3">ℒᾰΰḏἓḓ ἎԻ†Š</strong></a></i>
+                </h2>
+
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse  float-right" id="navbar">
+                <ul class="navbar-nav float-right  ml-auto h5">
+                    <li class="nav-item ">
+                        <a class="nav-link text-dark float-right px-3" href="/Template/index">Home</a>
+                    </li>
+
+                    <li class="nav-item ">
+                      <a class="nav-link text-dark float-right px-3" href="/Template/about">About</a>
+                  </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark float-right px-3" href="/gallery">Gallery</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark float-right px-3" href="/Template/contact">Contact</a>
+                    </li>
+
+                    <% if(flag==1)
+                    {%>
+                        <li class="nav-item">
+                        <a class="nav-link text-dark float-right px-3" href="/Template/login">Login</a>
+                        </li>
+                    <%}
+                    else
+                    {%>
+                      <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Profile
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/Template/signout">Logout</a>
+                        <a class="dropdown-item" href="/myOrder">My Orders</a>
+                      </div>
+                    </div>
+                    <%}%>
+                </ul>
+            </div>
+
+        </nav>
+        &nbsp;
+        <br><br>
+        <div class="container-fluid pt-5">
+            
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <h1 class="text-center text-white" style='font-family: "Sofia", sans-serif;'><span class="bg-danger">Sound that your audience</span> <br> <span class="bg-danger">will never forget.
+                    </span></h1>
+                    <p class="text-center text-dark"> Handcrafting immersive audio that will transport <br> your viewer to another world.
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    
+    <section class="contaienr-fluid bg-light p-4">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h1 style='font-family: "Trirong", sans-serif;'>Our top picks</h1>
+                </div>
+            </div>
+
+            <div class="row mx-5 mt-3">
+            
+                
+                <a href="#" class="col-md-3  nounderline text-dark col-sm-6 text-center pointer h4 text-wrap text-break round"> 
+                    
+                    <div class="card hover-border">
+                        <img class="card-img-top" height="170px" src="/image/gujrat.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Gujrati</h5>
+                            </div>
+                    </div>
+                
+                
+                </a>
+                <a href="#" class="col-md-3  nounderline text-dark col-sm-6 text-center pointer h4 text-wrap text-break round"> 
+                    
+                    <div class="card hover-border">
+                        <img class="card-img-top" height="170px" src="/image/jaipur.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Jaipuriya</h5>
+                            </div>
+                    </div>
+                
+                
+                </a>
+                <a href="#" class="col-md-3  nounderline text-dark col-sm-6 text-center pointer h4 text-wrap text-break round"> 
+                    
+                    <div class="card hover-border">
+                        <img class="card-img-top" height="170px" src="/image/madhubani.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Madhubani</h5>
+                            </div>
+                    </div>
+                
+                
+                </a>
+                <a href="#" class="col-md-3  nounderline text-dark col-sm-6 text-center pointer h4 text-wrap text-break round"> 
+                    
+                    <div class="card hover-border">
+                        <img class="card-img-top" height="170px" src="/image/keral.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Kerala Mural</h5>
+                            </div>
+                    </div>
+                
+                
+                </a>
+                
+            </div>
+        </div>
+    </section>
+    
+    <%- include('footer.ejs')%>
+    <script href="/js/javascript.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<%- include('header.ejs')%>
+<%- include('flash.ejs')%>
+
+<title>Forgot Password | LaudedArts</title>
+</head>
+  <body >
+    <nav class="navbar navbar-expand-lg  bg-info fixed-top navbar-fixed-top shadow  navbar-light" style="background-image:url('image/abcd.png')">
+
+            <div class="navbar-header">
+                <h2><a class="navbar-brand ml-3 font-weight-bolder" href="/Template/index"><strong class="text-white h3">ℒᾰΰḏἓḓ ἎԻ†Š</strong></a></i>
+                </h2>
+
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse float-right" id="navbar">
+                <ul class="navbar-nav float-right   ml-auto h5">
+                    <li class="nav-item ">
+                        <a class="nav-link text-danger float-right px-3" href="/Template/index">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-danger float-right px-3" href="/Template/about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-danger float-right px-3" href="/gallery">Gallery</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-danger float-right px-3" href="/Template/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+        &nbsp;
+        <br> <br>
+
+        <section class="container my-5 py-5 shadow bg-white" >
+            <div class ="row text-center">
+                <div class="col-12">
+                    <h1 class="pt-5"> One Time Password</h1>
+                    <p class="pt-1"> We have sent an OTP to your registerd email. </p>
+                </div>
+            </div>  
+            <div class="row text-center pb-3">
+                <div class="col-md-6 offset-md-3 col-sm-12">
+                        
+                        <form class="form text-center" method="POST" action="/Template/verifyForgotOtp">
+        
+                            <div class="mb-3" >
+                            <label for="enterotp" class="form-label"></label>
+                            <input type="text" class="form-control" id="enterotp" aria-describedby="emailHelp" name="otp" placeholder="Your OTP" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                        </form>
+                </div> 
+            </div>  
+        </section>  
+  </body>
+</html>

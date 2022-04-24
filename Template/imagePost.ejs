@@ -1,0 +1,118 @@
+<%- include('header.ejs')%>
+<%- include('flash.ejs')%>
+    
+<title>Upload | LaudedArts</title>
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-fixed-top shadow  navbar-light" style="background-color: black;">
+
+            <div class="navbar-header">
+                <h2><a class="navbar-brand ml-3 font-weight-bolder" href="/Template/index"><strong class="text-white h3">ℒᾰΰḏἓḓ ἎԻ†Š</strong></a></i>
+                </h2>
+
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse float-right" id="navbar">
+                <ul class="navbar-nav float-right   ml-auto h5">
+                    <li class="nav-item ">
+                        <a class="nav-link text-white float-right px-3" href="/Template/index">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white float-right px-3" href="/gallery">Gallery</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white float-right px-3" href="/Template/contact">Contact</a>
+                    </li>
+
+                    <% if(flag==1)
+                    {%>
+                      <li class="nav-item">
+                          <a class="nav-link text-white float-right px-3" href="/Template/login">login</a>
+                      </li>
+                    <%}
+                    else
+                    {%>
+                      <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Profile
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/Template/signout">Logout</a>
+                        <a class="dropdown-item" href="/myOrder">My Orders</a>
+                      </div>
+                    </div>
+                    <%}%>
+
+                </ul>
+            </div>
+
+    </nav>
+
+    <br><br><br><br>
+        &nbsp;
+        <section class="container shadow bg-white py-5">
+            <div class="row">
+                <div class="col-md-12">
+                <h1 class="text-center">Upload Paintings</h1>
+                </div>
+            </div>
+            <div class="row pt-5">
+                <div class="col-md-12">
+                    <form class="mx-5" method="POST" enctype="multipart/form-data" action="/post">
+                        <!-- 2 column grid layout with text inputs for the first and last names -->
+                        <div class="row mb-4">
+                          <div class="col-12">
+                            <div class="form-outline">
+                              <label class="form-label" for="post_title">Title</label>
+                              <input type="text" id="post_title" class="form-control" name="post_title" required />
+                              
+                            </div>
+                          </div>
+                          
+                        </div>
+                      
+                        <div class="row mb-4">
+                            <div class="col">
+                              <div class="form-outline">
+                                <label class="form-label" for="oldprice">Old Price</label>
+                                <input type="number" id="oldprice" class="form-control" name="oldprice" required/>
+                                
+                              </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="form-outline">
+                                  <label class="form-label" for="newprice">New Price</label>
+                                  <input type="number" id="newprice" class="form-control" name="newprice" required />
+                                  
+                                </div>
+                              </div>
+                            
+                          </div>
+                        
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="post_comment">Description</label>
+                          <textarea class="form-control" id="post_comment" rows="4" name="post_comment" required></textarea>
+
+                        </div>
+                      
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="post_image">Image</label>
+                            <input type="file" id="post_image" class="form-control" name="post_image" required/>
+
+                        </div>
+                      
+                       
+                        <button type="submit" class="btn btn-primary btn-block mb-4">Upload</button>
+                      </form>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

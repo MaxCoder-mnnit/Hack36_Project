@@ -1,0 +1,127 @@
+    <%- include('header.ejs')%>
+    <title>LaudedArts</title>
+    
+</head>
+
+<body>
+
+    <div class="container-fluid image">
+
+        <nav class="navbar navbar-expand-lg fixed-top navbar-fixed-top shadow  navbar-light" style="background-color: black;">
+
+            <div class="navbar-header">
+                <h2><a class="navbar-brand ml-3 font-weight-bolder" href="/Template/index"><strong class="text-white h3">ℒᾰΰḏἓḓ ἎԻ†Š</strong></a></i>
+                </h2>
+      
+            </div>
+      
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse float-right" id="navbar">
+                <ul class="navbar-nav float-right   ml-auto h5">
+                    <li class="nav-item ">
+                        <a class="nav-link text-white float-right px-3" href="/Template/index">Home</a>
+                    </li>
+      
+                    <li class="nav-item">
+                        <a class="nav-link text-white float-right px-3" href="/Template/about">About</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-white float-right px-3" href="/gallery">Gallery</a>
+                    </li>
+      
+                    <li class="nav-item">
+                        <a class="nav-link text-white float-right px-3" href="/Template/contact">Contact</a>
+                    </li>
+
+                    
+                    <% if(flag==1)
+              {%>
+                <li class="nav-item">
+                    <a class="nav-link text-white float-right px-3" href="/Template/login">login</a>
+                </li>
+              <%}
+              else
+              {%>
+                <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Profile
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="/Template/signout">Logout</a>
+                  <a class="dropdown-item" href="/myOrder">My Orders</a>
+                </div>
+              </div>
+              <%}%>
+              
+                </ul>
+            </div>
+      
+      </nav>
+        &nbsp;
+        <br><br>
+        <div class="container-fluid pt-5">
+            
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <h1 class="text-center text-white" style='font-family: "Sofia", sans-serif;'><span class="bg-danger">Sound that your audience</span> <br> <span class="bg-danger">will never forget.
+                    </span></h1>
+                    <p class="text-center text-dark"> Handcrafting immersive audio that will transport <br> your viewer to another world.
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- your orders page -->
+    <div class="container-fluid my-3">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <h1 class="text-center text-dark">Your Orders</h1>
+                <p class="text-center text-dark">Here are your orders. You can check the status of your order by clicking on the order number.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <table class="table table-striped ">
+                    <thead>
+                        <tr>
+                            <th scope="col">Order Number</th>
+                            <th scope="col">Order Date</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Total Price</th>
+                            <th scope="col">Order Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i<data.length; i++) {%>
+                        <tr>
+                            <th scope="row"> <%= data[i]._id %>  </th>
+                            <td><%= data[i].Date %></td>
+                            <td><%= data[i].title %></td>
+                            <td><%= data[i].price %></td>
+                            <td><a href="/orderdetail/<%= data[i]._id %>">View Details</a></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <%- include('footer.ejs')%>
+    <script href="js/javascript.js"></script>
+</body>
+
+</html>

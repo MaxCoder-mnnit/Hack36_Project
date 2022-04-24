@@ -1,0 +1,150 @@
+<!-- <!DOCTYPE html> 
+<html> 
+<title>Pay Here to get image</title> 
+<body> 
+	<h3><%= title%> Payment</h3> 
+	<form action="/payment/<%=id%>" method="POST"> 
+	<script
+		src="http://checkout.stripe.com/v2/checkout.js"
+		class="stripe-button"
+		data-key="<%= key %>" 
+		data-amount="<%= price%>"
+		data-currency="INR" 
+		data-name="Lauded Arts" 
+		data-description="<%= description%>" 
+		data-locale="auto" > 
+	</script> 
+	</form> 
+</body> 
+</html>
+--> 
+<%- include('header.ejs')%>
+<title>Shipping</title> 
+<body> 
+	<nav class="navbar navbar-expand-lg fixed-top navbar-fixed-top shadow  navbar-light" style="background-color: black;">
+
+		<div class="navbar-header">
+			<h2><a class="navbar-brand ml-3 font-weight-bolder" href="/Template/index"><strong class="text-white h3">ℒᾰΰḏἓḓ ἎԻ†Š</strong></a></i>
+			</h2>
+  
+		</div>
+  
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+			aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse float-right" id="navbar">
+			<ul class="navbar-nav float-right   ml-auto h5">
+				<li class="nav-item ">
+					<a class="nav-link text-white float-right px-3" href="/Template/index">Home</a>
+				</li>
+  
+				<li class="nav-item">
+					<a class="nav-link text-white float-right px-3" href="/gallery">Gallery</a>
+				</li>
+  
+				<li class="nav-item">
+					<a class="nav-link text-white float-right px-3" href="/Template/contact">Contact</a>
+				</li>
+				<% if(flag==1)
+				{%>
+				  <li class="nav-item">
+					  <a class="nav-link text-white float-right px-3" href="/Template/login">login</a>
+				  </li>
+				<%}
+				else
+				{%>
+				  <div class="dropdown">
+				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Profile
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="/Template/signout">Logout</a>
+					<a class="dropdown-item" href="/myOrder">My Orders</a>
+				  </div>
+				</div>
+				<%}%>
+			</ul>
+		</div>
+  
+	</nav>  
+	<br><br><br>
+	<section class="container shadow">
+	<div class="row my-5">
+		<div class="col-md-12 my-4 mb-4">
+		  <div class="card mb-4">
+			<div class="card-header py-3">
+			  <h5 class="mb-0">Biling details</h5>
+			</div>
+			<div class="card-body">
+			  <form  action="/payment/<%=id%>" method="POST">
+				
+				<div class="row mb-4">
+				  <div class="col">
+					<div class="form-outline">
+					  <input type="text" id="form7Example1" name="fname" class="form-control" required/>
+					  <label class="form-label" for="form7Example1">First name</label>
+					</div>
+				  </div>
+				  <div class="col">
+					<div class="form-outline">
+					  <input type="text" id="form7Example2" name="lname" class="form-control" required />
+					  <label class="form-label" for="form7Example2">Last name</label>
+					</div>
+				  </div>
+				</div>
+	  
+	  
+				<!-- Text input -->
+				<div class="form-outline mb-4">
+				  <input type="text" id="form7Example4" name="address" class="form-control" required/>
+				  <label class="form-label" for="form7Example4">Address</label>
+				</div>
+	  
+				<!-- Email input -->
+				<div class="form-outline mb-4">
+				  <input type="email" id="form7Example5" name="email" class="form-control" required />
+				  <label class="form-label" for="form7Example5">Email</label>
+				</div>
+	  
+				<!-- Number input -->
+				<div class="row mb-4">
+					<div class="col">
+					  <div class="form-outline">
+						<input type="number" id="form7Example1" name="phone" class="form-control" required/>
+						<label class="form-label" for="form7Example1">Phone Number</label>
+					  </div>
+					</div>
+					<div class="col">
+					  <div class="form-outline">
+						<input type="number" id="form7Example2" name="pin" class="form-control" required/>
+						<label class="form-label" for="form7Example2">PIN Code</label>
+					  </div>
+					</div>
+				  </div>
+	  
+				<!-- Message input -->
+				<div class="form-outline mb-4">
+				  <textarea class="form-control" name="additional" id="form7Example7" rows="4" required></textarea>
+				  <label class="form-label" for="form7Example7">Additional information</label>
+				</div>
+				<script
+					src="http://checkout.stripe.com/v2/checkout.js"
+					class="stripe-button"
+					data-key="<%= key %>" 
+					data-amount="<%= price%>"
+					data-currency="INR" 
+					data-name="Lauded Arts" 
+					data-description="<%= description%>" 
+					data-locale="auto" > 
+				</script>
+			  </form>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  </section>
+</body> 
+</html> 
+
+

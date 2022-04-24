@@ -1,0 +1,155 @@
+<%- include('header.ejs')%>
+<%- include('flash.ejs')%>
+
+    <title>Gallery | LaudedArts</title>
+    
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-fixed-top shadow  navbar-light" style="background-color: black;">
+
+      <div class="navbar-header">
+          <h2><a class="navbar-brand ml-3 font-weight-bolder" href="/Template/index"><strong class="text-white h3">ℒᾰΰḏἓḓ ἎԻ†Š</strong></a></i>
+          </h2>
+
+      </div>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+          aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse float-right" id="navbar">
+          <ul class="navbar-nav float-right   ml-auto h5">
+              <li class="nav-item ">
+                  <a class="nav-link text-white float-right px-3" href="/Template/index">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-white float-right px-3" href="/Template/about">About</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link text-white float-right px-3" href="/gallery">Gallery</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link text-white float-right px-3" href="/Template/contact">Contact</a>
+              </li>
+
+              <% if(flag==1)
+              {%>
+                <li class="nav-item">
+                    <a class="nav-link text-white float-right px-3" href="/Template/login">login</a>
+                </li>
+              <%}
+              else
+              {%>
+                <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Profile
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="/Template/signout">Logout</a>
+                  <a class="dropdown-item" href="/myOrder">My Orders</a>
+                </div>
+              </div>
+              <%}%>
+
+          </ul>
+      </div>
+
+</nav>
+
+<section class="container-fluid my-5 py-5 bg-light"  >
+        <div class="row mt-4">
+            
+            <div class="col-md-6 col-xs-12 text-center">
+                <div id="carouselExampleSlidesOnly" class="carousel " data-ride="carousel">
+                   
+                    <div class="carousel-inner round">
+                        
+                        <div class="carousel-item active">
+                            <img class="d-block w-100 rounded" style="
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                  " height="400px" src="/image/<%= data.Post_image %>" alt="Art1">
+                        </div>
+                       
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xs-12">
+                <h1><span class=" text-dark"><%=data.Post_title%></span></h1>
+                <h4 class="mt-3">Life style of Villagers</h4>
+                <h4> &#x20B9; <span class="text-danger"><%=data.new_price%></span> <small><del><%=data.old_price%></del></small> </h4>
+                <p class="mt-5"><strong>Description:- </strong></p>
+                <p><%=data.Post_comment%></p>
+                
+
+                <a href="/order/<%= data._id%>" class="btn btn-warning round">Buy Now!</a>
+
+                
+            </div>
+        </div>
+    </section>  
+        
+
+   <section class="container-fluid">
+       <h3 class="text-sm-center text-md-left ml-5">Recommended for you : </h3>
+       <div class="row mx-5 mt-3">
+            
+                
+        <a id="#" href="#" class="col-md-3  nounderline text-dark col-sm-6 text-center pointer h4 text-wrap text-break round"> 
+            
+            <div class="card hover-border">
+                <img class="card-img-top" height="200px" src="/image/gujrat.jpg" alt="gujrati">
+                    <div class="card-body">
+                        <h5 class="card-title">Gujrati</h5>
+                    </div>
+            </div>
+        
+        
+        </a>
+        <a id="#" href="#" class="col-md-3  nounderline text-dark col-sm-6 text-center pointer h4 text-wrap text-break round"> 
+            
+            <div class="card hover-border">
+                <img class="card-img-top" height="200px" src="/image/jaipur.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Jaipuriya</h5>
+                    </div>
+            </div>
+        
+        
+        </a>
+        <a id="#" href="#" class="col-md-3  nounderline text-dark col-sm-6 text-center pointer h4 text-wrap text-break round"> 
+            
+            <div class="card hover-border">
+                <img class="card-img-top" height="200px" src="/image/madhubani.jpg" alt="madhu"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Madhubani</h5>
+                    </div>
+            </div>
+        
+        
+        </a>
+        <a id="#" href="#" class="col-md-3  nounderline text-dark col-sm-6 text-center pointer h4 text-wrap text-break round"> 
+            
+            <div class="card hover-border">
+                <img class="card-img-top" height="200px" src="/image/keral.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Kerala Mural</h5>
+                    </div>
+            </div>
+        
+        
+        </a>
+        
+    </div>
+   </section>
+    
+   <%- include('footer.ejs')%>
+    
+    
+  </body>
+</html>

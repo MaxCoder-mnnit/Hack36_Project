@@ -1,0 +1,155 @@
+<%- include('header.ejs')%>
+<%- include('flash.ejs')%>
+
+<title>Contact us | LaudedArts</title>
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button
+        {
+           -webkit-appearance: none;
+           margin: 0;
+        }
+    </style>
+</head>
+
+<body class="body">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-fixed-top navbar-light">
+        <div class="navbar-header text-dark">
+            <h2>
+                <a class="navbar-brand text-dark ml-3 font-weight-bolder" href="/Template/index"><strong class="text-white h3">ℒᾰΰḏἓḓ ἎԻ†Š</strong></a></i>
+            </h2>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse float-right" id="navbar">
+            <ul class="navbar-nav float-right ml-auto h5">
+                <li class="nav-item">
+                    <a class="nav-link text-white float-right px-3" href="/Template/index">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white float-right px-3" href="/Template/about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white float-right px-3" href="/gallery">Gallery</a>
+                </li>
+
+                <% if(flag==1)
+              {%>
+                <li class="nav-item">
+                    <a class="nav-link text-white float-right px-3" href="/Template/login">login</a>
+                </li>
+              <%}
+              else
+              {%>
+                <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Profile
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="/Template/signout">Logout</a>
+                  <a class="dropdown-item" href="/myOrder">My Orders</a>
+                </div>
+              </div>
+              <%}%>
+              
+            </ul>
+        </div>
+    </nav>
+    <!--Navbar ends-->
+    &nbsp;
+    <br /><br /><br />
+   
+    <section class="main-contact-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-dark text-center">
+                    <h3>Need help ?</h3>
+                    <h6>let's ask your questions</h6>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <div class="card card-body border-0 shadow">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="card card-body card-contact bg-theme">
+                                    <h1 class="text-dark">Contact Us</h1>
+                                    <br /><br />
+                                    <div class="media mb-1 align-items-center">
+
+                                        <div class="icon-part">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                        </div>
+                                        <div class="media-body text-warning">
+                                            <h2 class="mt-1 ml-4 ">
+                                                Office Location
+                                            </h2>
+                                            <p class="h6 ml-4"> LaudedArts <br /> PG Hostel 10,6 <br/> MNNIT,
+                                                Allahabad<br/> 211004
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="media mb-1 align-items-center">
+
+                                        <div class="icon-part my-3">
+                                            <i class="bi bi-envelope"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="mt-2 ml-4 text-dark">laudedarts@gmail.com</h5>
+                                        </div>
+                                    </div>
+                                    <div class="media mb-1 align-items-center">
+
+                                        <div class="icon-part my-3">
+                                            <i class="bi bi-phone"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="mt-4 ml-4 text-danger">+91 | 7301089844</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <form method="POST" action="/User/contact">
+                                    
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" id="name" name="name"
+                                            aria-describedby="emailHelp" placeholder="Name" required/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            placeholder="Email" required/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="number">Mobile Number</label>
+                                        <input type="number" class="form-control" id="mobile" name="phone"
+                                            placeholder="Phone Number" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"
+                                            name="message" placeholder="Any query" required></textarea>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-submit text-white">
+                                            Send <i class="bi bi-send"></i>
+                                        </button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

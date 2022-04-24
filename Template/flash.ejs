@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <body>
+            <% if(Success && Success.length) {%>
+                <div class="alert alert-success alert-dismissible text-center fade show" role="alert">
+                    <%= Success %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <% } %>
+                
+                <% if(Error && Error.length) {%>
+                <div class="alert alert-danger alert-dismissible text-center fade show" role="alert">
+                    <%= Error %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <% } %>
+
+                <% if(Valid && Valid.length) {%>
+                    <div class="alert alert-warning alert-dismissible text-center fade show" role="alert">
+                        <%= Valid %>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <% } %>
+        </body>
+    </head>
+</html>
