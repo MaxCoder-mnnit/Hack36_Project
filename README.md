@@ -15,7 +15,7 @@
  
  Team Name: Code Harpers
  
- *[Asmit mohan](https://github.com/Asmit-Mohan)
+* [Asmit mohan](https://github.com/Asmit-Mohan)
 * [Ritvik Raj](https://github.com/ashu12chi)
 * [Krishanu dev](https://github.com/kd1995-max)
 
